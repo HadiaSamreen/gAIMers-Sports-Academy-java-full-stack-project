@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Insert title here</title>
+<style>
+body{
+
+ background-image: url("https://media.istockphoto.com/id/1153130310/photo/black-and-white-image-of-the-soccer-player-shoot-ball-on-artificial-turf.jpg?s=612x612&w=0&k=20&c=iWly_g2gGD81nTcwLEwDvhDaTs8HJ38ECe2k_snEuAQ=");
+ background-color: #cccccc;
+ background-size: contain;
+  width: 1000px;
+  height: 1000px;
+ 
+   
+background-image{max-width: 100%;
+  height: auto;}
+  }
+
+.form-group{
+	background-color: grey;
+	width: 35rem;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+        <a href="/gAIMers" class="navbar-brand"><h2><b>gAIMers</b></h2></a>
+        <h2>Edit your Review</h2>
+ 
+        <form  th:action="@{/updateAndSaveReview/{id}(id=${update.id})}" th:object="${update}"
+            method="POST">
+             
+            <div class="form-group">
+					<label> Enter id to Update: </label><br/> <input type="text" name="fName"
+						th:field="*{id}" class="form-control"
+						placeholder="Enter your updated Enrollment id" />
+						<br/>
+						<label> Enter  name to update: </label> 
+							<input type="text" name="lName" 
+							th:field="*{name}"
+						class="form-control" placeholder="Enter your lastname" /> 
+						
+                         <br/>
+						<label>Enter Achievements to update: </label> 
+						<input type="text" name="favSub"
+						th:field="*{achievements}" class="form-control"
+						placeholder="Enter your updated achievements" />
+						
+						<br/>
+						<label>Update the feedback: </label> 
+						<input type="text" name="favSub"
+						th:field="*{feedback}" class="form-control"
+						placeholder="Enter your updated feedback" />
+						
+						<br/>
+						<label><b>Update the Ratings: </b></label> 
+						<input type="text" name="favSub"
+						th:field="*{ratings}" class="form-control"
+						placeholder="Enter your updated ratings" />
+						<br/>
+				</div>
+				
+				<div class = "box-footer">
+				<button type = "submit" class = "btn btn-primary">
+				Update
+				</button>
+				
+				</div>
+        </form>
+         
+       
+        
+    </div>
+</body>
+</html>
